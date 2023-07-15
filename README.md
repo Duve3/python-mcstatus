@@ -29,7 +29,7 @@ host = 'demo.mcstatus.io'
 port = 25565
 query = True
 
-response: JavaStatusResponse = statusJava(host, port, query)  # port is an optional argument which defaults to 25565 when not given.
+response: JavaStatusResponse = statusJava(host, port, query)  # port is optional and defaults to 25565
 # You can receive and error in the above when the response is not 200, this copies the functionality from the node library.
 ```
 
