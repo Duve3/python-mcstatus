@@ -30,7 +30,13 @@ def statusJava(host: str, port: int = 25565, query: bool = True) -> JavaStatusRe
     res = requests.get(f"{BASE_URL}/status/java/{host}:{port}?query={query}")
 
     if res.status_code != 200:
-        raise ValueError(res.text)  # It's very vague about errors because the node-mcstatus library does the exact same thing.
+        print("Seems something went wrong, here's some debug information!")
+        print(f"BASE_URL: {BASE_URL},\nHOST: {host},\nPORT: {port},\nQUERY: {query}")
+
+        if res.text.startswith("Not Found"):
+            raise ValueError("Unable to find URL, most likely the `BASE_MCSTATUS_URL` environment variable is set to an incorrect value! (leave blank for default v2)")
+
+        raise ValueError(f"You probably should report this on GITHUB!:\n{res.text}")
 
     rjson = res.json()
     if "icon" in rjson.keys():

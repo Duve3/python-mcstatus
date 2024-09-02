@@ -1,6 +1,7 @@
 # a file to define constants in the project
 from dataclasses import dataclass
-BASE_URL: str = 'https://api.mcstatus.io/v2'
+import os
+BASE_URL: str = os.environ.get("BASE_MCSTATUS_URL", 'https://api.mcstatus.io/v2')  # works basically as intended
 
 
 @dataclass(frozen=True)

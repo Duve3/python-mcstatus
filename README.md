@@ -5,7 +5,7 @@
 [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)
 
 -----
-Python MCStatus is a library which wraps around the [mcstatus.io](https://mcstatus.io) api. It is developed very similar
+Python MCStatus is a library which wraps around the [mcstatus.io](https://mcstatus.io) API. It is developed very similar
 to the [node-mcstatus](https://www.npmjs.com/package/node-mcstatus) npm package. It's essentially the same just ported to python.
 
 **Table of Contents**
@@ -16,6 +16,7 @@ to the [node-mcstatus](https://www.npmjs.com/package/node-mcstatus) npm package.
 
 ## Installation
 
+To install this package open your terminal for your workspace and use the following command:
 ```console
 pip install python-mcstatus
 ```
