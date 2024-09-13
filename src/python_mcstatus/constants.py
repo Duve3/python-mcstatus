@@ -79,3 +79,8 @@ class Plugin:
 @dataclass(frozen=True)
 class PluginsDict:
     list: list[Plugin]
+
+
+class MinecraftServer:
+    def __init__():
+        pass # this is here incase in the future there is info that can be distributed

@@ -2,4 +2,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .status import statusJava, statusBedrock, StatusResponse, JavaStatusResponse, BedrockStatusResponse
+from .BedrockServer import BedrockServer, BedrockStatusResponse
+from .JavaServer import JavaServer, JavaStatusResponse
+from .constants import StatusResponse

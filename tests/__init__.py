@@ -10,7 +10,7 @@ os.environ["BASE_MCSTATUS_URL"] = "https://api.mcstatus.io/v2"
 import sys
 sys.path.append('..')
 
-from src.python_mcstatus import statusJava, statusBedrock  # noqa -- it should work because of sys.path.append("..")
+from src.python_mcstatus import JavaServer, BedrockServer  # noqa -- it should work because of sys.path.append("..")
 
 
 
@@ -18,14 +18,16 @@ def JavaTest():
     host = "mc.hypixel.net"
     port = 25565
 
-    hypixl = statusJava(host, port)
+    hypixl = JavaServer(host, port)
 
-    print("-----------", "STATUS JAVA:", hypixl, sep="\n")
+    print("-----------", "STATUS JAVA:", hypixl.get_status(), hypixl.lastValidResponse, sep="\n")
 
     host = "demo.mcstatus.io"
     query = False
+    
+    secondary = JavaServer(host, query=query)
 
-    print("-----------", "STATUS JAVA SECONDARY:", statusJava(host, query=query), sep="\n")
+    print("-----------", "STATUS JAVA SECONDARY:", secondary.get_status(), secondary.lastValidResponse, sep="\n")
 
     return hypixl
 
@@ -34,10 +36,12 @@ def BedrockTest():
     host = "play.cubecraft.net"
     port = 19132
 
-    cube = statusBedrock(host, port)
-    print("-----------", "STATUS BEDROCK:", cube, sep="\n")
+    cube = BedrockServer(host, port)
+    print("-----------", "STATUS BEDROCK:", cube.get_status(), cube.lastValidResponse, sep="\n")
 
     host = "demo.mcstatus.io"
+
+    secondary = 
 
     print("-----------", "STATUS BEDROCK SECONDARY:", statusBedrock(host), sep="\n")
 
